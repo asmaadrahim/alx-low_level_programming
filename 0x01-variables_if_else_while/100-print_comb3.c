@@ -1,28 +1,36 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
+* main - prints out all the numbers between 00 and 99
+* with no two digits being the same
+* Return: 0
 */
 int main(void)
 {
-	int d;
+	int i, j;
 
-	for (d = 0; d < 90; d++)
+	for (i = 48; i < 58; i++)
+	{
+		for (j = i; j < 58; j++)
 		{
-			for ()
+			if (i == j)
 			{
-				putchar((d / 10) + '0');
-				putchar((d % 10) + '0');
+				continue;
 			}
-			if (d != 89)
+
+			putchar(i);
+			putchar(j);
+
+			if (i == 56 && j == 57)
+			{
+				break;
+			}
+			else
 			{
 				putchar(',');
 				putchar(' ');
 			}
 		}
-		putchar('\n');
-		return (0);
+	}
+	putchar('\n');
+	return (0);
 }
