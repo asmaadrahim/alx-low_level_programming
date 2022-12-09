@@ -1,35 +1,41 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 /**
-* main - Function
-*
-* Return: Always 0.
+* main - prints out all possible combos of 3 digits
+* Return: 0
 */
 int main(void)
 {
-	int d1, d2, d3
 
-	for (d1 = 0; d1 < 8; d1++)
+	int i, j, k;
+
+	for (i = 48; i < 58; i++)
 	{
-		for (d2 = d1 + 1; d2 < 9; d2++)
+		for (j = i; j < 58; j++)
+		{
+			for (k = j; k < 58; k++)
 			{
-				for (d3 = d2 + 1; d3 < 10; d3++)
-					{
-						putchar((d1 % 10) + '0');
-						putchar((d2 % 10) + '0');
-						putchar((d3 % 10) + '0');
+				if (i == j || j == k || i == k)
+				{
+					continue;
+				}
+				putchar(i);
+				putchar(j);
+				putchar(k);
 
-						if (d1 == 7 && d2 == 8 && d3 == 9)
-							continue;
-						putchar(',');
-						putchar(' ');
-					}
+				if (i == 55 && j == 56 && k == 57)
+				{
+					break;
+				}
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
+
 			}
+		}
 	}
-
 	putchar('\n');
-
 	return (0);
 }
