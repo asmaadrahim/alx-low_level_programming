@@ -9,37 +9,38 @@
  *
  * Return: pointer to the new node, or NULL
  */
+
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	 unsigned int g;
-	 listint_t *w;
-	 listint_t *tempo = *head;
+	unsigned int g;
+	listint_t *w;
+	listint_t *tempo = *head;
 
-	 w = malloc(sizeof(listint_t));
-	 if (!w || !head)
-	 return (NULL);
+	w = malloc(sizeof(listint_t));
+	if (!w || !head)
+		return (NULL);
 
-	 w->n = n;
-	 w->next = NULL;
+	w->n = n;
+	w->next = NULL;
 
-	 if (idx == 0)
-	 {
-		 w->next = *head;
-		 *head = w;
-		 return (w);
-	 }
+	if (idx == 0)
+	{
+		w->next = *head;
+		*head = w;
+		return (w);
+	}
 
-	 for (g = 0; tempo && g < idx; g++)
-	 {
-		 if (g == idx - 1)
-		 {
-			 w->next = tempo->next;
-			 tempo->next = w;
-			 return (w);
-		 }
-		 else
-		 	tempo = tempo->next;
-	 }
+	for (g = 0; tempo && g < idx; g++)
+	{
+		if (g == idx - 1)
+		{
+			w->next = tempo->next;
+			tempo->next = w;
+			return (w);
+		}
+		else
+			tempo = tempo->next;
+	}
 
-	 return (NULL);
+	return (NULL);
 }
