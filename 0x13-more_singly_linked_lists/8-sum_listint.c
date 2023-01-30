@@ -6,16 +6,17 @@
  *
  * Return: resulting sum
  */
+
 int sum_listint(listint_t *head)
 {
-	 int result = 0;
-	 listint_t *tempo = head;
+	int result = 0;
+	listint_t *tempo = head;
 
-	 while (tempo)
-	 {
-		 result += tempo->n;
-		 tempo = tempo->next;
-	 }
+	while (tempo)
+	{
+		result += tempo->n;
+		tempo = tempo->next;
+	}
 
-	 return (result);
+	return (result);
 }
